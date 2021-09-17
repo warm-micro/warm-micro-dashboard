@@ -1,20 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 import ServiceBtn from '../component/ServiceBtn';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <Container>
-      <ServiceBtn />
+      <Link to="/home">
+        <ServiceBtn />
+      </Link>
       <Content>
         <SprintListTitle>Server List</SprintListTitle>
         <ListContainer>
-          <Element>account</Element>
-          <Element>workspace</Element>
-          <Element>sprint</Element>
-          <Element>card</Element>
-          <Element>thread</Element>
-          <Element>directMessage</Element>
+          <Link to={`/service/account`}>
+            <Element>account</Element>
+          </Link>
+          <Link to="/service/workspace">
+            <Element>workspace</Element>
+          </Link>
+          <Link to="/service/sprint">
+            <Element>sprint</Element>
+          </Link>
+          <Link to="/service/card">
+            <Element>card</Element>
+          </Link>
+          <Link to="/service/thread">
+            <Element>thread</Element>
+          </Link>
+          <Link to="/service/directMessage">
+            <Element>directMessage</Element>
+          </Link>
         </ListContainer>
       </Content>
     </Container>

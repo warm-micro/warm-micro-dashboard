@@ -1,4 +1,5 @@
 export interface Logs {
+  [index: string]: any;
   account: Log[];
   workspace: Log[];
   sprint: Log[];
