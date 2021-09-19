@@ -10,7 +10,6 @@ const COLORS = ['#FF6363', '#FFE663', '#63E64E'];
 const Status = () => {
 	const data = useSelector(selectData);
 	const count = useSelector(selectCounts);
-	console.log(data.account);
 	return (
 		<Container>
 			<ChartTitle>STATUS CODES</ChartTitle>

@@ -27,7 +27,6 @@ const Service = () => {
 	const data = useSelector(state => selectData(state, id));
 	const count = useSelector(selectCounts);
 	const timeData = useSelector(state => selectTimeData(state, id));
-	console.log(timeData);
 
 	return (
 		<Content>

@@ -78,7 +78,6 @@ export const selectTimeData = (state: RootState, id: string) => {
 			if (moment(firstTime).dayOfYear() === moment(currTime).dayOfYear()) {
 				cnt++;
 			} else {
-				console.log(moment(firstTime).dayOfYear(), moment(currTime).dayOfYear(), cnt);
 				arr.push({
 					time: moment(firstTime, 'YYYY-MM-DD')
 						.toDate()
