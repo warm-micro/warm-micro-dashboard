@@ -8,26 +8,26 @@ import HomeBoard from './HomeBoard';
 import Service from './Service';
 
 const Home = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchLogsStart());
-  }, []);
-  return (
-    <Container>
-      <Sidebar />
-      <Switch>
-        <Route exact path="/" component={() => <Redirect to="/home" />} />
-        <Route exact path="/home" component={HomeBoard} />
-        <Route path="/service/:id" component={Service} />
-      </Switch>
-    </Container>
-  );
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(fetchLogsStart());
+	}, []);
+	return (
+		<Container>
+			<Sidebar />
+			<Switch>
+				<Route exact path="/" component={() => <Redirect to="/home" />} />
+				<Route exact path="/home" component={HomeBoard} />
+				<Route path="/service/:id" component={Service} />
+			</Switch>
+		</Container>
+	);
 };
 
 export default Home;
 
 const Container = styled.div`
-  display: flex;
-  flex: 1;
-  height: 100%;
+	display: flex;
+	flex: 1;
+	height: 100%;
 `;
