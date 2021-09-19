@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ServiceBtn from '../component/ServiceBtn';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+const mappedLink = [
+	{
+		name: 'account',
+		link: '/service/account',
+	},
+	{
+		name: 'workspace',
+		link: '/service/workspace',
+	},
+	{
+		name: 'sprint',
+		link: '/service/sprint',
+	},
+	{
+		name: 'card',
+		link: '/service/card',
+	},
+	{
+		name: 'thread',
+		link: '/service/thread',
+	},
+	{
+		name: 'directMessage',
+		link: '/service/directMessage',
+	},
+];
 
 const Sidebar = () => {
+	const location = useLocation();
+	console.log(location.pathname);
 	return (
 		<Container>
 			<Link to="/home">
@@ -12,24 +41,11 @@ const Sidebar = () => {
 			<Content>
 				<SprintListTitle>Server List</SprintListTitle>
 				<ListContainer>
-					<Link to={`/service/account`}>
-						<Element>account</Element>
-					</Link>
-					<Link to="/service/workspace">
-						<Element>workspace</Element>
-					</Link>
-					<Link to="/service/sprint">
-						<Element>sprint</Element>
-					</Link>
-					<Link to="/service/card">
-						<Element>card</Element>
-					</Link>
-					<Link to="/service/thread">
-						<Element>thread</Element>
-					</Link>
-					<Link to="/service/directMessage">
-						<Element>directMessage</Element>
-					</Link>
+					{mappedLink.map((link, index) => (
+						<Link key={index} to={link.link}>
+							<Element isCurrent={location.pathname === link.link}>{link.name}</Element>
+						</Link>
+					))}
 				</ListContainer>
 			</Content>
 		</Container>
